@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi blog de viajes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #fffde7);
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      color: #2e7d32;
+      text-shadow: 1px 1px #c8e6c9;
+    }
+
+    .descripcion {
+      background-color: #ffffff;
+      border: 2px solid #aed581;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    ul {
+      background: #f1f8e9;
+      border: 1px solid #c5e1a5;
+      border-radius: 10px;
+      padding: 20px;
+      list-style-type: square;
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .formulario {
+      display: none;
+      background-color: #fffde7;
+      border: 2px solid #ffe082;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px auto;
+      max-width: 600px;
+    }
+
+    input {
+      margin-left: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hola, soy Valeria</h1>
+
+  <div class="descripcion">
+    <h2>Sobre mí</h2>
+    <p>Soy una estudiante de pregrado apasionada por la tecnología, los libros y la música.</p>
+  </div>
+
+  <h2>Cosas que me gustan:</h2>
+  <ul>
+    <li>Leer libros</li>
+    <li>Escuchar música</li>
+    <li>Programar</li>
+    <li>Ver películas</li>
+  </ul>
+
+  <div style="text-align: center;">
+    <button onclick="mostrarFormulario()">¡Ahora cuéntame de ti!</button>
+  </div>
+
+  <div class="formulario" id="formulario">
+    <form action="https://formsubmit.co/valeriabellido.2016@gmail.com" method="POST" onsubmit="reiniciarFormulario()">
+      <label>¿Quién eres?: <input type="text" name="nombre" required></label><br><br>
+      <label>¿Qué te gusta?: <input type="text" name="gustos" required></label><br><br>
+      <label>¿Qué estás aprendiendo?: <input type="text" name="aprendiendo" required></label><br><br>
+
+      <div class="caja">
+        <h2>Tus cosas favoritas</h2>
+        <ul>
+          <li>Comida favorita: <input type="text" name="comida" required></li>
+          <li>Película favorita: <input type="text" name="pelicula" required></li>
+          <li>Lugar soñado por visitar: <input type="text" name="lugar" required></li>
+          <li>Pasatiempos: <input type="text" name="pasatiempos" required></li>
+        </ul>
+      </div>
+
+      <button type="submit">Enviar</button>
+
+      <!-- Evita redirección -->
+      <input type="hidden" name="_next" value="https://google.com">
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function mostrarFormulario() {
+      document.getElementById('formulario').style.display = 'block';
+    }
+
+    function reiniciarFormulario() {
+      setTimeout(() => {
+        document.querySelector('form').reset();
+      }, 100);
+    }
+  </script>
+
+</body>
+</html>
